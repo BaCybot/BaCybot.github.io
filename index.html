@@ -1,6 +1,12 @@
 <html>
     <head>
         <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d7345605-c18c-44fb-a252-a00a2da92657" data-blockingmode="auto" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            function onLoadAction() {
+                alert("!");
+            }
+        </script>
     </head>
-    <body onload="alert('!')"></body>
+    <body onload="onLoadAction()"></body>
 </html>
