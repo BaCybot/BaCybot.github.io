@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d7345605-c18c-44fb-a252-a00a2da92657" data-blockingmode="auto" type="text/javascript"></script>
+
+        <script type="text/javascript" id="setsCookieScript">
+            function setCookie(cname, cvalue, exdays) {
+                const d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                let expires = "expires="+ d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+
+            function setCookies() {
+                alert("!");
+                setCookie("Mmmmmm", "Donuts", 1);
+            }
+        </script>
+
+        <script type="text/javascript" id="noCookiesScript">
+            (function () {
+                    console.log("I don't set cookies")
+            
+            function noCookies(link) {
+                console.log("I don't set cookies on load");
+                }
+            window.noCookies = window.noCookies || noCookies;
+            })();
+        </script>
+    </head>
+    <body onload="noCookies(this);setCookies()"></body>
+</html>
