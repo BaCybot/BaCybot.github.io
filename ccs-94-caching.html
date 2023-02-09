@@ -11,9 +11,27 @@
 	<script type="text/javascript">
 		// Force log consent and widget to load
 		Cookiebot.submitCustomConsent(true, true, true, true);
-		setTimeout(function() {
-			document.getElementsByClassName("CookiebotWidget-logo")[0].click();
-			}, 1000);
+		
+		function waitForElm(selector) {
+			return new Promise(resolve => {
+				if (document.querySelector(selector)) {
+					return resolve(document.querySelector(selector));
+				}
+
+				const observer = new MutationObserver(mutations => {
+					if (document.querySelector(selector)) {
+						resolve(document.querySelector(selector));
+						observer.disconnect();
+					}
+				});
+
+				observer.observe(document.body, {
+					childList: true,
+					subtree: true
+				});
+			});
+		}
+		waitForElm(".CookiebotWidget-logo").then((elm) => elm.click());
 	</script>
 
 <!--
