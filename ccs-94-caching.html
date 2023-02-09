@@ -6,7 +6,15 @@
 
   <title></title>
 
-	<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="89e5ef83-2ab1-4a9e-96af-5adc72e0a56f" data-blockingmode="auto" type="text/javascript"></script>
+	<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="89e5ef83-2ab1-4a9e-96af-5adc72e0a56f" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		// Force log consent and widget to load
+		Cookiebot.submitCustomConsent(true, true, true, true);
+		setTimeout(function() {
+			document.getElementsByClassName("CookiebotWidget-logo")[0].click();
+			}, 1000);
+	</script>
 
 <!--
 	<link rel="preload" as="fetch" href="https://consentcdn.cookiebot.com/consentconfig/89e5ef83-2ab1-4a9e-96af-5adc72e0a56f/bacybot.github.io/configuration.js" />
