@@ -4,34 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tracker Test Page</title>
-    <!-- Simple Analytics -->
-    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" /></noscript>
 
-    <!-- Matomo Tracker -->
-    <script>
-        var _paq = window._paq = window._paq || [];
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//your-matomo-domain.com/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
-            _paq.push(['setSiteId', '1']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-        })();
-    </script>
 
-    <!-- Statcounter -->
-    <script type="text/javascript">
-        var sc_project=12345678; 
-        var sc_invisible=1; 
-        var sc_security="abcd1234"; 
-        var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");
-        document.write("<sc" + "ript type='text/javascript' src='" + scJsHost + "statcounter.com/counter/counter.js'></" + "script>");
-    </script>
-    <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12345678/0/abcd1234/1/" alt="Web Analytics"></a></div></noscript>
+<script data-goatcounter="https://ultimate-centaur-beaver.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 
+
+
+
+    
+    <center>
+    <a id='hit_count_today_1' href='https://arunhitcounter.com' target='_blank' style='display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 10px; text-align: center; text-decoration: none; cursor: pointer; border: 1px solid black;'>
+        Visitor Counter
+    </a>
+<script type='text/javascript'>
+    fetch('https://arunhitcounter.com/hit_tracker.php?website_name=ultimatecentaurbeaver')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('hit_count_today_1').innerHTML = 'Today: ' + data.today_hits;
+        });
+</script></center>
+
+
+
+
+    
 </head>
 <body>
     <h1>Tracker Test Page</h1>
