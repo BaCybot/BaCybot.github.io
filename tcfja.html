@@ -1,4 +1,51 @@
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="b997afa4-d5a6-4e69-bcd6-93b849ca4fc2" data-blockingmode="auto" type="text/javascript"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookiebot TCF Toggle</title>
+    <script>
+        // Function to get query parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Function to toggle TCF
+        function toggleTCF() {
+            const isEnabled = getQueryParam('tcf') === 'enabled';
+            const newStatus = isEnabled ? 'disabled' : 'enabled';
+            window.location.search = `?tcf=${newStatus}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Cookiebot TCF Toggle</h1>
+    <button onclick="toggleTCF()">
+        Toggle TCF: <span id="toggleStatus"></span>
+    </button>
+
+    <script>
+        // Update button text based on current status
+        document.getElementById('toggleStatus').innerText = getQueryParam('tcf') === 'enabled' ? 'ON' : 'OFF';
+    </script>
+
+    <script id="Cookiebot" 
+        src="https://consent.cookiebot.com/uc.js" 
+        data-cbid="b997afa4-d5a6-4e69-bcd6-93b849ca4fc2" 
+        data-blockingmode="auto" 
+        type="text/javascript"
+        
+        <!-- Add TCF attribute if enabled -->
+        
+        ></script>
+    <script>
+        (function() {
+            if (getQueryParam('tcf') === 'enabled') {
+                document.getElementById('Cookiebot').setAttribute('data-framework', 'TCFv2.2');
+            }
+        })();
+    </script>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit consectetur sapien tristique sollicitudin. In hendrerit, dui et cursus pulvinar, augue nulla sollicitudin nunc, vel efficitur velit nunc et ante. Curabitur quam ante, ullamcorper eu accumsan dignissim, scelerisque quis diam. Fusce ac tempus augue, vitae fringilla tortor. Fusce pretium porta est, sit amet blandit sem auctor non. Nunc vehicula sit amet quam in euismod. Maecenas rhoncus arcu et ligula consectetur, nec efficitur risus pretium. Maecenas mattis semper lacus. Donec elementum diam purus. Maecenas vitae ipsum a erat bibendum gravida. In bibendum gravida sem, quis feugiat odio volutpat a. Aliquam vehicula vitae eros quis tempor. Ut feugiat ac nulla nec ullamcorper.</p>
 
@@ -69,3 +116,6 @@
 <p>Praesent ante magna, fringilla nec pharetra quis, sodales at velit. Mauris cursus semper malesuada. Curabitur eget interdum lectus. Donec rhoncus enim nec dui elementum tempus. Duis accumsan mi quis elit posuere vehicula. Aliquam et dignissim odio. Aenean et ex quis ligula tincidunt faucibus sed non nibh. Vestibulum vestibulum ligula in tempor ultrices. Pellentesque mattis, est et lacinia porttitor, ligula orci cursus ex, in sagittis felis nisl et purus. Ut dignissim felis vestibulum, accumsan sapien congue, semper lectus. Sed erat enim, imperdiet sed lectus vitae, ultrices auctor nisl. Sed justo sem, molestie a enim vitae, tristique eleifend velit.</p>
 
 <p>Etiam ullamcorper nisl sed facilisis scelerisque. Aliquam sed dolor tincidunt est tristique blandit. In rutrum sollicitudin ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce pellentesque efficitur elit, nec elementum ante eleifend luctus. Integer id nulla felis. Vestibulum nec ante sed lacus vehicula pulvinar sed in augue. Mauris convallis posuere sapien, a dictum dolor ullamcorper vitae. Aenean sit amet tellus dui. Ut placerat arcu sit amet magna porttitor efficitur et at odio. Maecenas vel tempor mi. Quisque laoreet ac libero eu eleifend.</p>
+
+</body>
+</html>
